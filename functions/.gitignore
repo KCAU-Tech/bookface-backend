@@ -1,2 +1,38 @@
+# Node.js dependencies
 node_modules/
-*.local
+package-lock.json
+yarn.lock
+
+# Firebase emulators and logs
+firebase-debug.log
+firebase-debug.*
+.firestore/
+.database/
+.auth/
+.pubsub/
+
+# Functions build artifacts
+lib/
+dist/
+coverage/
+*.log
+
+# Secrets and environment files
+.env
+.env.*
+firebase-debug.log
+.credentials.json
+
+# VS Code settings
+.vscode/
+
+# MacOS & Linux
+.DS_Store
+.npm/
+.idea/
+
+# Windows
+Thumbs.db
+
+# Cached files by ide
+*~
