@@ -1,0 +1,40 @@
+name: Deploy Firebase Backend to Dev
+
+on:
+  pull_request:
+    branches:
+      - dev
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Install Dependencies (Clean Install)
+        run: npm ci
+        working-directory: functions # Ensures a clean install of dependencies
+
+      - name: Lint Firebase Functions
+        run: npx eslint .
+        working-directory: functions
+
+      - name: Deploy Firebase Functions
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          firebase deploy --only functions --token "$FIREBASE_TOKEN"
+        working-directory: functions
