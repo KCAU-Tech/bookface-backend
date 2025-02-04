@@ -14,8 +14,12 @@ To set up the backend locally for development and contribution, follow these ste
 
 ### Prerequisites
 
-- Node.js installed
-- Firebase CLI installed
+- [Node.js installed](https://nodejs.org/en/download)
+- Firebase CLI installed:
+   ```sh
+   npm install -g firebase-tools
+   ```
+- [Postman installed](https://www.postman.com/downloads/)
 
 ### Setup
 
@@ -32,18 +36,31 @@ To set up the backend locally for development and contribution, follow these ste
    cd functions
    npm install
    ```
-4. Log in to Firebase:
-   ```sh
-   firebase login
-   ```
-5. Initialize Firebase project:
-   ```sh
-   firebase init
-   ```
-   Select Firestore and Functions when prompted.
-6. Start the development server:
+4. Start the development server:
    ```sh
    firebase emulators:start
    ```
+5. Testing API Endpoints:
+
+   Get the URL in the format of:
+   ```sh
+   http://127.0.0.1:<PORT>/bookface-backend/us-central/helloWorld
+   ```
+
+## How to Contribute
+
+To contribute to the project, follow these steps:
+
+1. Create a new branch from the `dev` branch using the format `feature-branch-name`:
+   ```sh
+   git checkout -b feature-branch-name dev
+   ```
+2. Push your code to the newly created branch:
+   ```sh
+   git push origin feature-branch-name
+   ```
+3. Create a pull request (PR) with at least one reviewer.
+4. Wait for your PR to be reviewed and approved before merging.
 
 Now you can contribute to the backend locally!
+
