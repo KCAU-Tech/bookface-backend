@@ -9,7 +9,8 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
+    name: Deploy Firebase Functions
     runs-on: ubuntu-latest
 
     steps:
