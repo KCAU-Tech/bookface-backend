@@ -1,49 +1,56 @@
-# Bookface Backend
+# Bookface Cloud Functions
 
-## Description
-
-Bookface is a social media platform designed exclusively for KCA University students. It allows students to interact, share posts, comment, like, and message each other.
-
-## Tech Stack
-
-- **Backend:** Firebase
-
-## Running Locally
-
-To set up the backend locally for development and contribution, follow these steps:
+## Running the Cloud Functions Locally
 
 ### Prerequisites
 
-- Node.js installed
+- Node.js (v22)
+- npm installed
 - Firebase CLI installed
 
-### Setup
+### Setup Cloud Functions
 
 1. Clone the repository:
    ```sh
    git clone https://github.com/KCAU-Tech/bookface-backend.git
+   cd bookface/functions
    ```
-2. Navigate to the project directory:
+2. Install dependencies:
    ```sh
-   cd bookface-backend
-   ```
-3. Install dependencies:
-   ```sh
-   cd functions
    npm install
    ```
-4. Log in to Firebase:
-   ```sh
-   firebase login
-   ```
-5. Initialize Firebase project:
-   ```sh
-   firebase init
-   ```
-   Select Firestore and Functions when prompted.
-6. Start the development server:
+3. Start the Firebase emulator:
    ```sh
    firebase emulators:start
    ```
 
-Now you can contribute to the backend locally!
+## Contributing
+
+- Fetch the latest updates.
+  ```sh
+  git fetch
+  ```
+- Create a feature branch out of the `dev` branch.
+  ```sh
+  git checkout -b feature-branch-name dev
+  ```
+- Make changes to the code.
+
+- Add the changes to the staging area.
+  ```sh
+  git add .
+  ```
+- Commit changes.
+  ```sh
+  git commit -m "Short descriptive commit message"
+  ```
+- Push the changes to the feature branch.
+  ```sh
+  git push origin feature-branch-name
+  ```
+- Submit a pull request.
+  Go to [the pull requests page](https://github.com/KCAU-Tech/bookface-backend/pulls) and create a pull request for your code with at least one reviewer.
+
+Once your code is approved and merged to the `dev` branch, your changes will be live on [the Bookface URL](https://bookface-eight.vercel.app/) and or the changes should be accessible via the api.
+
+Happy Coding ✨
