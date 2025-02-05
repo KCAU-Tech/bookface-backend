@@ -17,7 +17,7 @@ exports.helloWorld = onRequest((request, response) => {
   cors(request, response, () => {
     response.json({
       title: "Firebase Cloud Functions",
-      message: "Hello from Firebase!",
+      message: "Hello from Firebase! 👋",
     })
   })
 });
